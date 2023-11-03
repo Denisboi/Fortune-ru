@@ -4,7 +4,11 @@ echo=echo
 if [ $# -eq 0 ]; then
  if test -f /usr/bin/python || test -f /$PREFIX/bin/python || test -f /bin/python; then 
  while true; do
+  if test -f /usr/bin/fortune || test -f /$PREFIX/bin/fortune || test -f /bin/fortune; then
+   str=$(fortune)
+  else
   str=$(./fortune)
+  fi
   if [ ${#str} -lt 500 ]; then
     break
   fi

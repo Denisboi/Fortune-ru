@@ -2,7 +2,7 @@
 python=$(python --version)
 echo=echo
 if [ $# -eq 0 ]; then
- if test -f /usr/bin/python || test -f /$PREFIX/bin/python || test -f /bin/python; then 
+ if test -f /usr/bin/python && test -f /usr/bin/pip || test -f /$PREFIX/bin/python && test -f /$PREFIX/bin/pip || test -f /bin/python && test -f /bin/pip; then 
  while true; do
   if test -f /usr/bin/fortune || test -f /$PREFIX/bin/fortune || test -f /bin/fortune; then
    str=$(fortune)

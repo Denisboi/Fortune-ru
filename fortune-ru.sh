@@ -1,8 +1,12 @@
 #!/bin/sh
 python=$(python --version)
 echo=echo
+
 if [ $# -eq 0 ]; then
  if test -f /usr/bin/python  || test -f /$PREFIX/bin/python || test -f /bin/python; then 
+ if ! python3 -c 'import translate'; then
+  pip install translate
+ fi
  while true; do
   if test -f /usr/bin/fortune || test -f /$PREFIX/bin/fortune || test -f /bin/fortune; then
    str=$(fortune)
